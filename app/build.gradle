@@ -1,0 +1,27 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.aodfix.lsposed"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            // No minify; you'll sign the APK manually
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    // Xposed API is compileOnly; LSPosed supports Xposed modules, gradle will fetch if available
+    compileOnly 'de.robv.android.xposed:api:82'
+}
