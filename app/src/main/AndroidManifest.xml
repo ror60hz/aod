@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aodfix">
+    <application
+        android:label="AOD Fix"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="Keep AOD always on (1 minute)" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+    </application>
+</manifest>
