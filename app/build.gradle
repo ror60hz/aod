@@ -3,24 +3,44 @@ plugins {
 }
 
 android {
-    namespace "com.aodfix"
+    namespace 'com.example.lsposedmodule'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.aodfix"
+        applicationId "com.example.lsposedmodule"
         minSdk 27
         targetSdk 34
         versionCode 1
         versionName "1.0"
+
+        // supaya ga error waktu build LSPosed
+        multiDexEnabled true
     }
-    
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 }
+
+repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url "https://api.xposed.info/" }
+}
+
 dependencies {
+    // penting → pakai compileOnly biar gak nyari dependency pas runtime
     compileOnly 'de.robv.android.xposed:api:82'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
 }
