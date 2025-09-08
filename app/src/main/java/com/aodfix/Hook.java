@@ -1,9 +1,9 @@
-package com.aodfix;
+package com.example.lsposedmodule.;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import de.robv.android.xposed.XC_MethodReplacement;
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
-public class Hook implements IXposedHookLoadPackage {
+public class AODFix implements IXposedHookLoadPackage {
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         if (lpparam.packageName.equals("com.transsion.aod")) {
